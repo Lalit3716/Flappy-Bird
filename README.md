@@ -30,4 +30,8 @@ Try To Score as much as you can, So, Good Luck! &#128077.
 ### Demo
 ![alt text](assets/demo.gif)
 
+## Inspiration
+I made this game watching clear-code's Youtube video here [Tutorial](https://www.youtube.com/watch?v=UZg49z76cL)
+
+
 # Finally Thank You! For trying my game. :innocent:
