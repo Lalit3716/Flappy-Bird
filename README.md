@@ -1,6 +1,6 @@
 # Flappy Bird
 ## Getting Started
-#### **Download the Zip File**, and extract it anywhere. After extracting place all files in a single folder and open flappy.py and Enjoy 😄. 
+#### **Download the Zip File**, and extract it anywhere. After extracting place all files in a single folder and open flappy.exe and Enjoy 😄. 
 ## Description Of Game
 <ul>
   <li>This is a single-player game based on the infamous Flappy Bird Game.</li>
@@ -26,6 +26,9 @@
 You have to safe the bird from getting hit with the pipes in the game. <b>You will get 2 points on each successive safe</b><br> 
 Try To Score as much as you can, So, Good Luck! &#128077.
 </p>
+
+## Update
+<p>I have added an executable file to play game, if you want code open flappy.py file all the assets can be find in data folder.</p>
 
 ### Demo
 ![alt text](assets/demo.gif)
