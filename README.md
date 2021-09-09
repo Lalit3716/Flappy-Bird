@@ -31,7 +31,7 @@ Try To Score as much as you can, So, Good Luck! &#128077.
 <p>I have added an executable file to play game, if you want code open flappy.py file all the assets can be find in data folder.</p>
 
 ### Demo
-![alt text](assets/demo.gif)
+![alt text](data/assets/demo.gif)
 
 ## Inspiration
 I made this game watching clear-code's Youtube video here [Tutorial](https://www.youtube.com/watch?v=UZg49z76cLw)
