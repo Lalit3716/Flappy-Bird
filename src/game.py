@@ -20,6 +20,9 @@ class Game:
         self.import_graphics()
         self.current_bg = self.BG_DAY
 
+        # Import sound effects
+        self.import_sound_effects()
+
         # Font
         self.font = pygame.font.Font("../data/font/04B_19.ttf", 40)
 
@@ -66,6 +69,17 @@ class Game:
         self.START_BG = pygame.transform.scale(pygame.image.load(
             "../data/assets/message.png").convert_alpha(), (300, 400))
 
+    def import_sound_effects(self):
+        if pygame.mixer.get_init() is None:
+            return
+
+        self.SFX_DEATH = pygame.mixer.Sound("..data/sound/sfx_die.wav")
+        self.SFX_FLAP = pygame.mixer.Sound("..data/sound/sfx_wing.wav")
+        self.SFX_SWOOSHING = pygame.mixer.Sound(
+            "..data/sound/sfx_swooshing.wav")
+        self.SFX_HIT = pygame.mixer.Sound("..data/sound/sfx_hit.wav")
+        self.SFX_POINT = pygame.mixer.Sound("..data/sound/sfx_point.wav")
+
     def create_pipe(self):
         x = WIDTH + 100
         y = choice(POSSIBLE_PIPE_HEIGHTS)
@@ -85,9 +99,10 @@ class Game:
                 pipe.scored = True
                 self.score += 0.5  # 1 point for passing through both pipes
 
-    def display_score(self):
-        score = self.font.render(str(int(self.score)), True, (255, 255, 255))
-        self.display.blit(score, (WIDTH / 2 - 10, 50))
+    def display_score(self, pos, message=""):
+        score = self.font.render(
+            message + str(int(self.score)), True, (255, 255, 255))
+        self.display.blit(score, pos)
 
     def start_screen(self):
         self.display.blit(self.START_BG, (WIDTH / 2 - 145, HEIGHT / 2 - 250))
@@ -95,6 +110,8 @@ class Game:
     def game_over_screen(self):
         self.display.blit(self.GAME_OVER_BG,
                           (WIDTH / 2 - 100, HEIGHT / 2 - 42))
+
+        self.display_score((WIDTH / 2 - 80, 200), message="Score: ")
 
     def main_screen(self):
         if self.score == self.next_cycle:
@@ -114,7 +131,7 @@ class Game:
 
         # Score
         self.calc_score()
-        self.display_score()
+        self.display_score((WIDTH / 2 - 10, 50))
 
     def run(self):
         while True:

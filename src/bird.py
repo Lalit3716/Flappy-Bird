@@ -45,7 +45,7 @@ class Bird(pygame.sprite.Sprite):
         self.movment -= BIRD_JUMP
 
     def check_death(self):
-        if self.rect.top < 0 or self.rect.bottom > HEIGHT:
+        if self.rect.top <= 0 or self.rect.bottom >= HEIGHT - 100:
             self.on_death()
 
     def update(self):
