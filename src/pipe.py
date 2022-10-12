@@ -18,6 +18,8 @@ class Pipe(pygame.sprite.Sprite):
         else:
             self.rect = self.image.get_rect(midtop=pos)
 
+        self.scored = False
+
     def update(self):
         self.rect.x -= PIPE_SPEED
         if self.rect.right < 0:
